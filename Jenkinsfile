@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '2')
+    }
     environment {
        Country = "Camerooon"
        Name = "Joe"
@@ -12,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 mkdir joe
-                echo $country
+                echo $Country
                 '''
             }
         }
