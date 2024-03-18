@@ -2,6 +2,7 @@ pipeline {
     agent any
     options {
       buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '2')
+      disableConcurrentBuilds()
     }
     environment {
        Country = "Camerooon"
