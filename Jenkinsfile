@@ -1,10 +1,19 @@
 pipeline {
     agent any
+    environment {
+       Country = "Camerooon"
+       Name = "Joe"
+    }
+
+
 
     stages {
         stage('build') {
             steps {
-                echo 'Hello World'
+                sh '''
+                mkdir joe
+                echo $country
+                '''
             }
         }
 
@@ -12,7 +21,9 @@ pipeline {
 
         stage('test') {
             steps {
-                echo 'Hello World'
+                sh '''
+                echo $Name
+                '''
             }
         }
 
