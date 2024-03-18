@@ -14,7 +14,7 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-                mkdir joe
+
                 echo $Country
                 '''
             }
